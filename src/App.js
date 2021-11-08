@@ -11,14 +11,13 @@ import productList from './static/productList'
 import './static/App.css'
 
 const App = ()=> {
-  const [products, setProducts] = useState(productList)
   const [cartContents, setCartContents] = useState([])
   const [cartSize, setCartSize] = useState(0)
 
   const addToCart = (item) => {
-    const tempArr = cartContents
-    tempArr.push(item)
-    setCartContents(tempArr)
+    const tempCartContents = cartContents
+    tempCartContents.push(item)
+    setCartContents(tempCartContents)
   }
 
 

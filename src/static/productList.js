@@ -3,10 +3,10 @@
 import Product from '../components/Product'
 const productInfo = [
     {
-        name: '',
-        image: '',
-        price: '',
-        description: ''
+        name: 'a',
+        image: 'a',
+        price: 'a',
+        description: 'a'
     },
 ]
 
