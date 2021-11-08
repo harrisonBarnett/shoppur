@@ -1,6 +1,10 @@
+import {NavLink} from 'react-router-dom'
 const Navigation = () => {
     return(
-        <h1>Navigation</h1>
+        <div id='navbar'>
+            <NavLink exact to='/'>home</NavLink>
+            <NavLink to='/shop'>shop</NavLink>
+        </div>
     )
 }
 export default Navigation
