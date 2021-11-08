@@ -1,6 +1,12 @@
-const Cart = ()=> {
+const Cart = props => {
+    const mapped = props.cartContents.map(item => {
+        return <li>{item}</li>
+    })
     return(
-    <h1>Cart</h1>
+        <>
+            <h1>cart</h1>
+            {mapped}
+        </>
     )
 }
 export default Cart

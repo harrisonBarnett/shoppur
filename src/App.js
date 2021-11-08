@@ -1,3 +1,4 @@
+import {useEffect, useState} from 'react'
 import {Route, NavLink} from 'react-router-dom'
 import Header from './components/Header'
 import Footer from './components/Footer'
@@ -8,14 +9,28 @@ import Cart from './components/Cart'
 import './App.css'
 
 const App = ()=> {
+  const [cartContents, setCartContents] = useState(['a','b','c'])
+  const [cartSize, setCartSize] = useState(0)
+
+  const addToCart = (item) => {
+    const tempArr = cartContents
+    tempArr.push(item)
+    setCartContents(tempArr)
+  }
+
+
   return (
     <>
       <Header />
       <div id='page-content'>
-        <NavLink to='/cart'><button>cart</button></NavLink>
+        <NavLink to='/cart'><button>cart</button>{cartSize}</NavLink>
         <Route exact path='/' component={Home} />
-        <Route exact path='/shop' component={Shop} />
-        <Route exact path='/cart' component={Cart} />
+        <Route path='/shop' 
+               component={ ()=> <Shop 
+                                addToCart={addToCart}/> } />
+        <Route path='/cart' 
+               component={ ()=> <Cart 
+                                cartContents={cartContents}/> } />
       </div>
       <Footer />
     </>

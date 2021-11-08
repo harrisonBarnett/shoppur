@@ -1,6 +1,9 @@
-const Shop = ()=> {
+const Shop = props => {
     return(
-    <h1>Shop</h1>
+        <div id='shop'>
+            <button 
+            onClick={()=> {props.addToCart('d')}}>add to cart</button>
+        </div>
     )
 }
 export default Shop
