@@ -6,10 +6,12 @@ import Home from './components/Home'
 import Shop from './components/Shop'
 import Cart from './components/Cart'
 import Product from './components/Product'
+import productList from './static/productList'
 
 import './static/App.css'
 
 const App = ()=> {
+  const [products, setProducts] = useState(productList)
   const [cartContents, setCartContents] = useState([])
   const [cartSize, setCartSize] = useState(0)
 
