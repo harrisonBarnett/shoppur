@@ -48,14 +48,23 @@ const Cart = props => {
         return(
             <div className='cart-item'>
                 <p>{props.name}</p>
-                <p>{props.image}</p>
-                <p>{props.price}</p>
-                <p>{props.quantity}</p>
-                <p>total: {props.price * qty}</p>
-                <p>{props.description}</p>
-                <button onClick={()=>{decreaseQty(props.name)}}>-</button>
-                <div>{qty}</div>
-                <button onClick={()=>{increaseQty(props.name)}}>+</button>
+                <div className='cart-item-content'>
+                    <div className='cart-item-img'
+                        style={{backgroundImage: `url(${props.image})`}}>
+                    </div>
+                    <div className='cart-price-group'>
+                        <p>price: {props.price}.00</p>
+                        <p>qty: {props.quantity}</p>
+                        <p>total: {props.price * qty}.00</p>
+                    </div>
+                    <div className='cart-item-btn-group'>
+                        <button onClick={()=>{decreaseQty(props.name)}}>-</button>
+                        <div className='qty-counter'>{qty}</div>
+                        <button onClick={()=>{increaseQty(props.name)}}>+</button>
+                    </div>
+                </div>
+                
+                
             </div>
         )
     }
@@ -72,13 +81,18 @@ const Cart = props => {
                 updateCart={props.updateCart}/>
     })
     return(
-        <>
-            <h1>cart</h1>
-            <h2>total: {totalPrice}</h2>
-            <h2>cart size: {cartSize}</h2>
+        <div id='cart'>
+            <div id='cart-meta-container'>
+                <h1>your cart</h1>
+                <h2>items: {cartSize}</h2>
+                <h2 className='cart-bg-yellow'>total: {totalPrice}.00</h2>
+            </div>
+            
+            <div id='cart-item-list'>
+                {mappedItems}
+            </div>
+        </div>
 
-            {mappedItems}
-        </>
     )
 }
 export default Cart
