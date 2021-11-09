@@ -1,6 +1,10 @@
+
 const Cart = props => {
     const mapped = props.cartContents.map(item => {
-        return <li>{item}</li>
+        return <div className='shop-item'>
+                    <li>{item.name}</li>
+                    <li>{item.quantity}</li>
+                </div>
     })
     return(
         <>
