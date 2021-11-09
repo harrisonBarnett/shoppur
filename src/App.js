@@ -63,14 +63,10 @@ const App = ()=> {
   return (
     <>
       <Header />
-      <div id='page-content'>
-        <NavLink 
-        to='/cart'
-        id='cart-btn'
-        className={useLocation.pathname === '/cart' ? 'display-none' : 'display-block'}>
-          <button>cart</button>
-          {cartSize}
+      <NavLink to='/cart' id='cart-btn'>
+            <button>cart: {cartSize}</button>
         </NavLink>
+      <div id='page-content'>
         <Route exact path='/' component={Home} />
         <Route path='/shop' 
                component={ ()=> <Shop 

@@ -1,18 +1,66 @@
 html, body {
   margin: 0;
   padding: 0;
+  font-size: 16px;
+
+  background: lightblue;
 }
 * h1,
 * h2,
 * h3,
 * p,
-* ul {
+* ul,
+* a {
   margin: 0;
   padding: 0;
+  text-decoration: none;
+  list-style: none;
 }
+#page-content {
+  width: 100%;
+  max-width: 1400px;
+  min-height: 600px;
+  margin: 0 auto;
+}
+#header {
+  position: relative;
+  width: 100%;
+  height: 20vmax;
 
-#cart-btn {
+}
+.header-home {
+  background: coral;
+}
+.header-else {
+  background: seagreen;
+}
+#navbar {
   position: absolute;
-  top: 0;
+  left: 0;
+  bottom: 0;
+}
+a.active {
+  background: white;
+}
+#cart-btn {
+  position: fixed;
   right: 0;
+  bottom: 0;
+  transform: translateY(-50%);
+}
+/* SHOP STUFF */
+.shop-item {
+  width: 200px;
+  display: flex;
+  flex-direction: column;
+}
+.shop-item-img {
+  height: 100px;
+  width: 100px;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+.shop-item-btn-group {
+  display: flex;
 }

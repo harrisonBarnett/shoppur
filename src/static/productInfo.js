@@ -1,10 +1,12 @@
-// TODO: make an array of product objects
-// export a mapped array of <Product /> objects
+import Can from './images/products/can.png'
+import Pennies from './images/products/pennies.png'
+import Stick from './images/products/stick.png'
+import Sink from './images/products/sink.png'
 const productInfo = [
     {
         id: 1,
         name: 'can',
-        image: '',
+        image: Can,
         price: 6.00,
         quantity: 1,
         description: 'this a damn can man'
@@ -12,7 +14,7 @@ const productInfo = [
     {   
         id: 2,
         name: 'some pennies',
-        image: '',
+        image: Pennies,
         price: 4.00,
         quantity: 1,
         description: "just some pennies. dealer's choice,"
@@ -20,7 +22,7 @@ const productInfo = [
     {   
         id: 3,
         name: 'a stick',
-        image: '',
+        image: Stick,
         price: 10.00,
         quantity: 1,
         description: "stick :) hvae, a stick :) :)"
@@ -28,7 +30,7 @@ const productInfo = [
     {   
         id: 4,
         name: 'sink',
-        image: '',
+        image: Sink,
         price: 1200.00,
         quantity: 1,
         description: "here's a sink we found, don't ask where we got it"

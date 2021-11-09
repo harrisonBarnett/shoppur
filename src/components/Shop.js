@@ -17,13 +17,15 @@ const Shop = props => {
         return(
             <div className='shop-item'>
                 <p>{props.name}</p>
-                <p>{props.image}</p>
-                <p>{props.price}</p>
-                <p>{props.quantity}</p>
+                <div className='shop-item-img'
+                     style={{backgroundImage: `url(${props.image})` }}></div>
+                <p>{props.price}.00</p>
                 <p>{props.description}</p>
-                <button onClick={decreaseQty}>-</button>
-                <div>{qty}</div>
-                <button onClick={increaseQty}>+</button>
+                <div className='shop-item-btn-group'>
+                    <button onClick={decreaseQty}>-</button>
+                    <div>{qty}</div>
+                    <button onClick={increaseQty}>+</button>
+                </div>
                 <button onClick={()=> {props.addToCart(
                                                       props.name, 
                                                       props.image, 
@@ -47,6 +49,7 @@ const Shop = props => {
     })
     return(
         <div id='shop'>
+            <h1>shop</h1>
             {mappedItems}
         </div>
     )

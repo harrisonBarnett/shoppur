@@ -51,6 +51,7 @@ const Cart = props => {
                 <p>{props.image}</p>
                 <p>{props.price}</p>
                 <p>{props.quantity}</p>
+                <p>total: {props.price * qty}</p>
                 <p>{props.description}</p>
                 <button onClick={()=>{decreaseQty(props.name)}}>-</button>
                 <div>{qty}</div>
