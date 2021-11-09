@@ -1,5 +1,5 @@
 import {useEffect, useState} from 'react'
-import {Route, NavLink} from 'react-router-dom'
+import {Route, NavLink, useLocation} from 'react-router-dom'
 import Header from './components/Header'
 import Footer from './components/Footer'
 import Home from './components/Home'
@@ -11,8 +11,18 @@ import './static/App.css'
 const App = ()=> {
   const [cartContents, setCartContents] = useState([])
   const [cartSize, setCartSize] = useState(0)
-  const [cartTotalCost, setCartTotalCost] = useState(0)
 
+  useEffect(()=>{
+    setCartSize(calcCartSize)
+  }, [cartContents])
+  
+  const calcCartSize = () => {
+    let total = 0
+    cartContents.forEach(product => {
+      total += product.quantity
+    })
+    return total
+  }
   const addToCart = (name, image, price, quantity, description) => {
     if(cartContents.length == 0) {
       const tempCartContents = cartContents
@@ -42,10 +52,13 @@ const App = ()=> {
         })
       }
       setCartContents(newCartContents)
-      setCartSize(cartSize + quantity)
+      // setCartSize(cartSize + quantity)
     }
   }
-
+  const updateCart = (newCartContents, amt) => {
+    setCartContents(newCartContents)
+    setCartSize(cartSize + amt)
+  }
 
   return (
     <>
@@ -53,7 +66,8 @@ const App = ()=> {
       <div id='page-content'>
         <NavLink 
         to='/cart'
-        id='cart-btn'>
+        id='cart-btn'
+        className={useLocation.pathname === '/cart' ? 'display-none' : 'display-block'}>
           <button>cart</button>
           {cartSize}
         </NavLink>
@@ -63,7 +77,9 @@ const App = ()=> {
                                 addToCart={addToCart}/> } />
         <Route path='/cart' 
                component={ ()=> <Cart 
-                                cartContents={cartContents}/> } />
+                                cartSize={cartSize}
+                                cartContents={cartContents}
+                                updateCart={updateCart}/> } />
       </div>
       <Footer />
     </>

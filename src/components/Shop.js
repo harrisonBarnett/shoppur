@@ -3,7 +3,7 @@ import productInfo from '../static/productInfo'
 const Shop = props => {
 
     const ShopItem = props => {
-        const[qty, setQty] = useState(1)
+        const [qty, setQty] = useState(1)
 
         const increaseQty = () => {
             setQty(qty + 1)
@@ -14,16 +14,12 @@ const Shop = props => {
             }
             setQty(qty - 1)
         }
-        const handleValueChange = (e)=> {
-            setQty(e.target.value)
-        }
         return(
             <div className='shop-item'>
                 <p>{props.name}</p>
                 <p>{props.image}</p>
                 <p>{props.price}</p>
                 <p>{props.quantity}</p>
-                {/* <p>{props.totalPrice}</p> */}
                 <p>{props.description}</p>
                 <button onClick={decreaseQty}>-</button>
                 <div>{qty}</div>
@@ -33,7 +29,6 @@ const Shop = props => {
                                                       props.image, 
                                                       props.price,
                                                       qty,
-                                                     //props.totalPrice,
                                                       props.description)}}>add to cart</button>
             </div>
         )
