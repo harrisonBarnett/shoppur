@@ -1,12 +1,17 @@
-import {useLocation} from 'react-router-dom'
+import {useLocation, NavLink} from 'react-router-dom'
 import Navigation from './Navigation'
-const Header = () => {
+import Cart from '../static/images/icons/cart.svg'
+const Header = props => {
     const path = useLocation().pathname
     return(
         <div 
-        id='header'
-        className={path === '/' ? 'header-home' : 'header-else'}>
+        id='header'>
+            <h1>logo</h1>
             <Navigation />
+            <NavLink to='/cart' id='cart-btn'>
+                <img src={Cart}></img>
+                <p>{props.cartSize}</p>
+            </NavLink>
         </div>
     )
 }

@@ -62,10 +62,7 @@ const App = ()=> {
 
   return (
     <>
-      <Header />
-      <NavLink to='/cart' id='cart-btn'>
-            <button>cart: {cartSize}</button>
-        </NavLink>
+      <Header cartSize={cartSize}/>
       <div id='page-content'>
         <Route exact path='/' component={Home} />
         <Route path='/shop' 

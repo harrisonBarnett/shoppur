@@ -17,7 +17,7 @@ const productInfo = [
         image: Pennies,
         price: 4.00,
         quantity: 1,
-        description: "just some pennies. dealer's choice,"
+        description: "just some pennie's. dealer's choice"
     },
     {   
         id: 3,
