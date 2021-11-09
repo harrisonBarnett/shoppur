@@ -64,7 +64,7 @@ const App = ()=> {
     <>
       <Header cartSize={cartSize}/>
       <div id='page-content'>
-        <Route exact path={['/', '/shoppur/']} component={Home} />
+        <Route path={['/', '/shoppur/']} component={Home} />
         <Route path='/shop' 
                component={ ()=> <Shop 
                                 addToCart={addToCart}/> } />
